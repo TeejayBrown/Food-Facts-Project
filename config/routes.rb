@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "home#index"
+  get 'home/index'
   get 'product_creators/index'
   get 'product_creators/show'
   get 'products/index'
@@ -9,4 +11,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :products, only: [:index, :show]
   resources :product_creators, only: [:index, :show]
+
+  #root to: "home#index"
 end
