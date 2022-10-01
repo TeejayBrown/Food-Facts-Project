@@ -1,0 +1,29 @@
+<% content_for  (:html_title) {@product.product_name}%>
+
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+        <%= image_tag @product.image, :alt => @product.product_name %>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <h3>&nbsp;&nbsp;&nbsp;<%= @product.product_name.titlecase%></h3>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Product Brand:</strong>
+          <%= @product.brand%>
+        </p>
+
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Product URL:</strong>
+          <%= link_to "Link", @product.url%>
+        </p>
+
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> Product Uploaded by:</strong>
+          <%= link_to @product.product_creator.name, @product.product_creator%>
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
+

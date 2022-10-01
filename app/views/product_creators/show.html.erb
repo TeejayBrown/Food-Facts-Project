@@ -1,0 +1,23 @@
+<h2 class='title is-2'><%= @product_creator.name.titlecase%></h2>
+<p class='mb-5'> This creator uploaded <%= @product_creator.products.count %> food products. </p>
+
+<h3>Products created by <%= @product_creator.name %></h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Product Name</th>
+      <th>Brand</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @product_creator.products.each do |product|%>
+      <tr>
+      <td><%= image_tag(product.thumbnail, :alt => product.product_name) %></td>
+      <td><%= link_to product.product_name.titlecase, product %></td>
+      <td><%= product.brand %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
