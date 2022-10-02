@@ -3,6 +3,8 @@ require "csv"
 Product.delete_all
 ProductCreator.delete_all
 Page.delete_all
+ProductCountry.delete_all
+Country.delete_all
 
 Page.create(
   title: 'About Us',
@@ -42,10 +44,18 @@ productsData.each do |p|
     puts "Invalid manufacturing country #{p['creator']} for product #{p['product_name']}"
   end
 
+  #countries
+  countries = p['countries_en'].split(",").map(&:strip)
 
-  #puts p['product_name']
+  countries.each do |country|
+    country = Country.find_or_create_by(name: country)
+
+    ProductCountry.create(product: product, country: country)
+  end
 
 end
 
-puts "The creators created #{ProductCreator.count} products"
-puts "Created #{Product.count} products"
+puts "Created #{ProductCreator.count} Product Creators"
+puts "Created #{Product.count} Products"
+puts "Created #{Country.count} Countries"
+puts "Created #{ProductCountry.count} ProductCountries"

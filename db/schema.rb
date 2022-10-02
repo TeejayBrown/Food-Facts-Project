@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_02_034428) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_02_042853) do
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -23,6 +29,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_02_034428) do
     t.string "permalink"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "product_categories", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_product_categories_on_category_id"
+    t.index ["product_id"], name: "index_product_categories_on_product_id"
   end
 
   create_table "product_countries", force: :cascade do |t|
@@ -40,6 +55,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_02_034428) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "product_nutrients", force: :cascade do |t|
+    t.decimal "energy"
+    t.decimal "fat"
+    t.decimal "carbohydrate"
+    t.decimal "sugar"
+    t.decimal "protein"
+    t.decimal "salt"
+    t.decimal "sodium"
+    t.integer "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_nutrients_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "product_name"
     t.string "url"
@@ -53,7 +82,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_02_034428) do
     t.index ["product_creator_id"], name: "index_products_on_product_creator_id"
   end
 
+  add_foreign_key "product_categories", "categories"
+  add_foreign_key "product_categories", "products"
   add_foreign_key "product_countries", "countries"
   add_foreign_key "product_countries", "products"
+  add_foreign_key "product_nutrients", "products"
   add_foreign_key "products", "product_creators"
 end
