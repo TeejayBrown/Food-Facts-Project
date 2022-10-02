@@ -10,13 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_02_014315) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_02_034428) do
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pages", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.string "permalink"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "product_countries", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "country_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_product_countries_on_country_id"
+    t.index ["product_id"], name: "index_product_countries_on_product_id"
   end
 
   create_table "product_creators", force: :cascade do |t|
@@ -38,5 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_02_014315) do
     t.index ["product_creator_id"], name: "index_products_on_product_creator_id"
   end
 
+  add_foreign_key "product_countries", "countries"
+  add_foreign_key "product_countries", "products"
   add_foreign_key "products", "product_creators"
 end
