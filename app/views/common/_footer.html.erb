@@ -27,19 +27,14 @@
         </p>
       </div>
     </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="subtitle is-5">
-          <%= link_to "About the data", permalink_path('about')%>
-        </p>
+    <% cms_pages.each do |page|%>
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="subtitle is-5">
+            <%= link_to page.title, permalink_path(page.permalink)%>
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="subtitle is-5">
-          <%= link_to "All Product Creators", product_creators_path%>
-        </p>
-      </div>
-    </div>
+    <% end %>
   </nav>
 </footer>
