@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pages
   root to: "home#index"
   get 'home/index'
   get 'product_creators/index'

@@ -1,21 +1,32 @@
-<h1>Home#index</h1>
-
 <div class="columns">
   <div class="column">
     <h2 class="title is-2">All Products </h2>
     <ol class="ml-5">
       <% @products.each do |product|%>
-        <li> <%= link_to product.product_name, product %><em>(<%= link_to product.product_creator.name %>)</em></li>
+        <li> <%= link_to product.product_name, product %><em>(<%= link_to product.product_creator.name.titlecase %>)</em></li>
       <% end %>
     </ol>
+    <br>
+    <p>
+      <strong>
+        <%= link_to '✔ Click to See all Products', products_path %>
+      </strong>
+    </p>
   </div>
 
   <div class="column">
-    <h2 class="title is-2">All Product Creators </h2>
+    <h2 class="title is-2">Top 100 Product Creators </h2>
     <ol class="ml-5">
       <% @product_creators.each do |creator|%>
-        <li> <%= link_to creator.name, creator %></li>
+        <li> <%= link_to creator.name.titlecase, creator %></li>
       <% end %>
     </ol>
+    <br>
+    <p>
+      <strong>
+        <%= link_to '✔ Click to See all the Top Product Creators', product_creators_path %>
+      </strong>
+    </p>
   </div>
 </div>
+
