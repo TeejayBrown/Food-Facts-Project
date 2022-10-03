@@ -72,3 +72,4 @@ group :test do
 end
 
 gem 'kaminari'
+gem 'activerecord-reset-pk-sequence'

@@ -5,6 +5,9 @@ ProductCreator.delete_all
 Page.delete_all
 ProductCountry.delete_all
 Country.delete_all
+ProductCategory.delete_all
+Category.delete_all
+ProductNutrient.delete_all
 
 Page.create(
   title: 'About Us',
@@ -44,6 +47,18 @@ productsData.each do |p|
     puts "Invalid manufacturing country #{p['creator']} for product #{p['product_name']}"
   end
 
+   #product nutrient
+  product.product_nutrients.create(
+    energy: p['energy_100g'],
+    fat: p['fat_100g'],
+    carbohydrate: p['carbohydrates_100g'],
+    sugar: p['sugars_100g'],
+    protein: p['proteins_100g'],
+    salt: p['salt_100g'],
+    sodium: p['sodium_100g']
+  )
+
+
   #countries
   countries = p['countries_en'].split(",").map(&:strip)
 
@@ -53,9 +68,21 @@ productsData.each do |p|
     ProductCountry.create(product: product, country: country)
   end
 
+  #categories
+  categories = p['categories_en'].split(",").map(&:strip)
+
+  categories.each do |category|
+    category = Category.find_or_create_by(name: category)
+
+    ProductCategory.create(product: product, category: category)
+  end
+
 end
 
 puts "Created #{ProductCreator.count} Product Creators"
 puts "Created #{Product.count} Products"
 puts "Created #{Country.count} Countries"
 puts "Created #{ProductCountry.count} ProductCountries"
+puts "Created #{Category.count} Categories"
+puts "Created #{ProductCategory.count} ProductCategories"
+puts "Created #{ProductNutrient.count} ProductNutrients"
