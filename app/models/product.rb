@@ -9,4 +9,6 @@ class Product < ApplicationRecord
   has_many :categories, through: :product_categories
 
   has_many :product_nutrients
+
+  paginates_per 25
 end

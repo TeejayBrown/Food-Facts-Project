@@ -43,25 +43,8 @@
             <%= text_field_tag(:keywords, nil, class: "input", placeholder: 'Search For Products')%>
           </p>
           <br>
-          <div class="dropdown is-active">
-            <div class="dropdown-trigger">
-              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                <span>All Product Categories</span>
-                <span class="icon is-small">
-                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-              </button>
-            </div>
-            <%# <div class="dropdown-menu" id="dropdown-menu" role="menu">
-              <div class="dropdown-content">
-                <a href="#" class="dropdown-item">
-                  Dropdown item
-                </a>
-              </div>
-            </div> %>
-          </div>
           <br>
-          <p class="control">
+          <p class="ml-2 control">
             <button class="button is-success">
               Search
             </button>
@@ -71,59 +54,3 @@
     </div>
   </nav>
 </header>
-
-<%# <div class="container is-fluid">
-  <div class="notification has-text-white has-background-link">
-    <nav class="level">
-
-      <div class="level-left">
-        <p class="level-item">
-          <%= link_to "Home", root_path%>
-        <%# </p>
-        <p class="level-item">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Products", products_path%>
-        <%# </p>
-        <p class="level-item">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Creators", product_creators_path%>
-        <%# </p>
-      </div> %>
-
-      <%# <div class="level-right">
-        <div class="level-item">
-          <div class="field has-addons">
-            <p class="control">
-              <input class="input" type="text" placeholder="Product Search">
-            </p>
-            <br>
-            <div class="dropdown is-active">
-              <div class="dropdown-trigger">
-                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                  <span>All</span>
-                  <span class="icon is-small">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </button>
-              </div>
-              <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                <div class="dropdown-content">
-                  <a href="#" class="dropdown-item">
-                    Dropdown item
-                  </a>
-                </div>
-              </div>
-            </div>
-            <br>
-            <p class="control">
-              <button class="button is-success">
-                Search
-              </button>
-            </p>
-          </div>
-        </div>
-      </div> %>
-
-      <!-- Left side -->
-
-    <%# </nav>
-  </div>
-</div> %>

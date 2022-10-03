@@ -1,5 +1,6 @@
+<h1 class="title is-2">Search Results <h1>
 <p class="mb-5">
-  Found <%= pluralize(@products.count, 'product') %> when searching for: <%= params[:keywords]%>
+  Your search for "<%= params[:keywords]%>" found <%= pluralize(@products.count, 'product') %>.
 </p>
 <ul class="ml-5">
   <% @products.each do |product|%>

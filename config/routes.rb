@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   get 'products/index'
   get 'products/show'
   get '/pages/:permalink' => "pages#permalink", as: 'permalink'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
   resources :products, only: [:index, :show] do
+    get '/page/:page', action: :index, on: :collection
     collection do
       get get "search"
     end

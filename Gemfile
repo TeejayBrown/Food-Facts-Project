@@ -73,3 +73,4 @@ end
 
 gem 'kaminari'
 gem 'activerecord-reset-pk-sequence'
+gem 'ransack'
