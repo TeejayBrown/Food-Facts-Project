@@ -1,0 +1,8 @@
+<p class="mb-5">
+  Found <%= pluralize(@products.count, 'product') %> when searching for: <%= params[:keywords]%>
+</p>
+<ul class="ml-5">
+  <% @products.each do |product|%>
+    <li><%= link_to product.product_name, product %></li>
+  <% end %>
+</ul>

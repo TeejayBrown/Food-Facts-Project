@@ -12,7 +12,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    collection do
+      get get "search"
+    end
+  end
+
   resources :product_creators, only: [:index, :show]
   resources :pages, except: [:show]
 

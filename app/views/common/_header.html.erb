@@ -23,36 +23,38 @@
       </div>
     </div>
     <div class="level-item has-text-centered">
-          <div class="field has-addons">
-            <p class="control">
-              <input class="input" type="text" placeholder="Product Search">
-            </p>
-            <br>
-            <div class="dropdown is-active">
-              <div class="dropdown-trigger">
-                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                  <span>All Product Categories</span>
-                  <span class="icon is-small">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </button>
-              </div>
-              <%# <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                <div class="dropdown-content">
-                  <a href="#" class="dropdown-item">
-                    Dropdown item
-                  </a>
-                </div>
-              </div> %>
-            </div>
-            <br>
-            <p class="control">
-              <button class="button is-success">
-                Search
+      <%= form_with(url: search_products_path, method: :get, local: true) do%>
+        <div class="field has-addons">
+          <p class="control">
+            <%= text_field_tag(:keywords, nil, class: "input", placeholder: 'Search For Products')%>
+          </p>
+          <br>
+          <div class="dropdown is-active">
+            <div class="dropdown-trigger">
+              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span>All Product Categories</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
               </button>
-            </p>
+            </div>
+            <%# <div class="dropdown-menu" id="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <a href="#" class="dropdown-item">
+                  Dropdown item
+                </a>
+              </div>
+            </div> %>
           </div>
+          <br>
+          <p class="control">
+            <button class="button is-success">
+              Search
+            </button>
+          </p>
         </div>
+      <% end%>
+    </div>
   </nav>
 </header>
 
