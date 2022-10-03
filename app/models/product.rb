@@ -10,5 +10,5 @@ class Product < ApplicationRecord
 
   has_many :product_nutrients
 
-  paginates_per 25
+  paginates_per 50
 end

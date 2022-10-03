@@ -11,4 +11,6 @@ class Country < ApplicationRecord
                                       .group("countries.id")
                                       .order("country_count DESC")
   end
+
+  paginates_per 50
 end

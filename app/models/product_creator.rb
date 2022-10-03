@@ -9,4 +9,6 @@ class ProductCreator < ApplicationRecord
                                       .group("product_creators.id")
                                       .order("product_count DESC")
   end
+
+  paginates_per 50
 end

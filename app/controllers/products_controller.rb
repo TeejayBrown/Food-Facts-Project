@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.order("product_name DESC").limit(100).page params[:page]
+    @products = Product.order("product_name DESC").page params[:page]
   end
 
   def show

@@ -11,4 +11,6 @@ class Category < ApplicationRecord
                                       .group("categories.id")
                                       .order("category_count DESC")
   end
+
+  paginates_per 50
 end

@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.ordered_by_categories.limit(100)
+    @categories = Category.ordered_by_categories.page params[:page]
   end
 
   def show

@@ -24,9 +24,15 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :product_creators, only: [:index, :show]
+  resources :product_creators, only: [:index, :show] do
+    get '/page/:page', action: :index, on: :collection
+  end
   resources :pages, except: [:show]
-  resources :categories, only: [:index, :show]
-  resources :countries, only: [:index, :show]
+  resources :categories, only: [:index, :show] do
+    get '/page/:page', action: :index, on: :collection
+  end
+  resources :countries, only: [:index, :show] do
+    get '/page/:page', action: :index, on: :collection
+  end
   #root to: "home#index"
 end
