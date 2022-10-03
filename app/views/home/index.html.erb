@@ -3,7 +3,7 @@
     <h2 class="title is-2">All Products </h2>
     <ol class="ml-5">
       <% @products.each do |product|%>
-        <li> <%= link_to product.product_name, product %><em>(<%= link_to product.product_creator.name.titlecase %>)</em></li>
+        <li> <%= link_to product.product_name, product %><em>(<%= link_to product.product_creator.name.titlecase, product.product_creator %>)</em></li>
       <% end %>
     </ol>
     <br>
