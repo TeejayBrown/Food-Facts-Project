@@ -1,0 +1,20 @@
+<h2 class='title is-2'><%= @category.name%> product category has <%= @category.products.count %> food products. </h2>
+
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Product Name</th>
+      <th>Brand</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @category.products.each do |product|%>
+      <tr>
+      <td><%= image_tag(product.thumbnail, :alt => product.product_name) %></td>
+      <td><%= link_to product.product_name.titlecase, product %></td>
+      <td><%= product.brand %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

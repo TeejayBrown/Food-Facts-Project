@@ -1,0 +1,25 @@
+<h2 class="title is-2">All Product Categories</h2>
+
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category|%>
+      <tr>
+      <td><%= category.name %></td>
+      <td><%= link_to "Show Products", category, class: "button is-success"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<p>
+  <strong>
+    <%= link_to '✔ Click to See all Product Categories', categories_path %>
+  </strong>
+</p>
