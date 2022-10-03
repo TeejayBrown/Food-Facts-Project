@@ -1,0 +1,24 @@
+<h2 class="title is-2">All Product Countries</h2>
+<table class="table is-fullwidth">
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Products</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @countries.each do |country|%>
+      <tr>
+      <td><%= country.name %> <em>(<%= country.products.count %>)</em></td>
+      <td><%= link_to "Show Products", country, class: "button is-success"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<p>
+  <strong>
+    <%= link_to '✔ Click to See all Product Countries', countries_path %>
+  </strong>
+</p>

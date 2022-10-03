@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'countries/index'
+  get 'countries/show'
   get 'categories/index'
   get 'categories/show'
   #resources :pages
@@ -23,5 +25,6 @@ Rails.application.routes.draw do
   resources :product_creators, only: [:index, :show]
   resources :pages, except: [:show]
   resources :categories, only: [:index, :show]
+  resources :countries, only: [:index, :show]
   #root to: "home#index"
 end

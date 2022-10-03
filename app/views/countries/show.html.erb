@@ -1,5 +1,4 @@
-<h2 class='title is-2'><%= @product_creator.name.titlecase%></h2>
-<p class='mb-5'> <strong> <%= @product_creator.name.titlecase %> </strong> uploaded <%= @product_creator.products.count %> food products. </p>
+<h2 class='title is-2'><%= @country.name%> country has <%= @country.products.count %> food products. </h2>
 
 <table class="table is-fullwidth">
   <thead>
@@ -10,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @product_creator.products.each do |product|%>
+    <% @country.products.each do |product|%>
       <tr>
       <td><%= image_tag(product.thumbnail, :alt => product.product_name) %></td>
       <td><%= link_to product.product_name.titlecase, product %></td>
