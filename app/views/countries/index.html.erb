@@ -11,7 +11,8 @@
   <tbody>
     <% @countries.each do |country|%>
       <tr>
-      <td><%= country.name %> <em>(<%= country.products.count %>)</em></td>
+      <td>
+      <%= country.name %> <em>(<%= country.products.count %>)</em> <strong><%= country.name == "Canada" ? "Proudly Canadian Product" : "" %></strong></td>
       <td><%= link_to "Show Products", country, class: "button is-success"%></td>
       </tr>
     <% end %>

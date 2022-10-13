@@ -30,7 +30,8 @@
 
             <p>
               <strong> <%= product.countries.map(&:name).count > 1 ? "Country".pluralize : "Country"%>:</strong>
-              <%= product.countries.map(&:name).join(", ")%>
+              <%= product.countries.map(&:name).join(", ") %>
+              <em class='has-text-black'><%= product.countries.map(&:name).join(", ") == "Canada" ? "Proudly Canadian Product" : "" %></em>
             </p>
           </div>
           <div class="column ml-3">
