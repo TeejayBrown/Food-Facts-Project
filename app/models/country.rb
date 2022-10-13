@@ -1,8 +1,9 @@
 class Country < ApplicationRecord
   has_many :product_countries
   has_many :products, through: :product_countries
+  #has_one :place
 
-  #validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true
 
   def self.ordered_by_countries
     @categories = Country.select("countries.*")

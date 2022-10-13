@@ -28,8 +28,6 @@ csv_data = File.read(filename)
 
 productsData = CSV.parse(csv_data, headers: true, encoding: "utf-8")
 
-productsData.each do |p|
-
   product_creator = ProductCreator.find_or_create_by(name: p['creator'])
 
   if product_creator && product_creator.valid?
@@ -86,3 +84,20 @@ puts "Created #{ProductCountry.count} ProductCountries"
 puts "Created #{Category.count} Categories"
 puts "Created #{ProductCategory.count} ProductCategories"
 puts "Created #{ProductNutrient.count} ProductNutrients"
+
+# Place.delete_all
+# filedata = Rails.root.join("db/places.csv")
+# puts "Loading Products from the csv file: #{filedata}"
+# pcsv_data = File.read(filedata)
+
+# placesData = CSV.parse(pcsv_data, headers: true)
+
+# placesData.each do |p|
+#   Place.create(
+#     name: p['country'],
+#     latitude: p['latitude'],
+#     longitude: p['longitude']
+#   )
+# end
+
+# puts "Created #{Place.count} places"

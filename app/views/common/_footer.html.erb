@@ -1,6 +1,7 @@
-<br>
-<hr class="container is-fluid">
 <footer>
+<hr>
+<div class="container">
+  <div class="notification is-dark">
   <p class="has-text-centered">
     <em>Copywrong OpenFoodFacts 2022</em>
   </p>
@@ -41,14 +42,23 @@
         </p>
       </div>
     </div>
-    <% cms_pages.each do |page|%>
-      <div class="level-item has-text-centered">
-        <div>
-          <p class="subtitle is-5">
-            <%= link_to page.title, permalink_path(page.permalink)%>
-          </p>
-        </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="subtitle is-5">
+          <%= link_to "About Data", home_about_path%>
+        </p>
       </div>
-    <% end %>
+    </div>
+    <%# <% cms_pages.each do |page|%>
+      <%# <div class="level-item has-text-centered">
+        <div>
+          <p class="subtitle is-5"> %>
+            <%# <%= link_to page.title, permalink_path(page.permalink)%>
+          <%# </p>
+        </div>
+      </div> %>
+    <%# <% end %>
   </nav>
+  </div>
+  </div>
 </footer>

@@ -1,0 +1,17 @@
+<section class="section">
+  <h1 class="title">Dataset Description</h1>
+  <h2 class="subtitle">
+    The dataset used in this project is obtained from the Open Food Facts website Data (<%= link_to "Data Source", "https://world.openfoodfacts.org/data" %>).
+    The dataset provides nutritious information on food products from around the world.
+    The data was downloaded as a CSV file consisting of 2,554,848 rows and 186 columns.
+    Data exploration was carried out to determine which of the columns will be useful for the project.
+    Data cleaning was done to remove null values from the required columns.
+    The non-null and non-zero rows ended up being 82,274 rows and 17 columns.
+    The selected columns include barcode, URL, product name, brand, creator, categories, countries, places, image URL, thumbnail, energy_100g, fat, carbohydrates, sugar, protein, salt, and sodium.
+  </h2>
+  <br>
+  <h1 class="title">Database ERD Diagram</h1>
+  <div class="has-text-centered">
+    <%= image_tag("ERD.png", :alt => "ERD Diagram") %>
+  </div>
+</section>
