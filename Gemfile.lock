@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: 04ee9a362d12d8c84171cef8fbf10d472d50f9bd
+  branch: main
+  specs:
+    ransack (3.2.1)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -172,10 +182,6 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
-    ransack (3.2.1)
-      activerecord (>= 6.1.5)
-      activesupport (>= 6.1.5)
-      i18n
     regexp_parser (2.6.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -235,7 +241,7 @@ DEPENDENCIES
   kaminari
   puma (~> 5.0)
   rails (~> 7.0.4)
-  ransack
+  ransack!
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)

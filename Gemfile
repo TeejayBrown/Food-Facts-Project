@@ -73,4 +73,4 @@ end
 
 gem 'kaminari'
 gem 'activerecord-reset-pk-sequence'
-gem 'ransack'
+gem 'ransack', :github => 'activerecord-hackery/ransack', :branch => 'main'
